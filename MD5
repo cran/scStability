@@ -1,4 +1,4 @@
-ba6e4fda878576d220ce77f4866852a5 *DESCRIPTION
+9ffb35946a2fbb354245f4d29963e367 *DESCRIPTION
 15f9a1b830fb9714bb2dc0a8fb5de16f *LICENSE
 26aa2e723c5e3a943b3721f15085d809 *NAMESPACE
 a124e18d57f13f9761872166ee792cda *R/clustStable.r
@@ -9,14 +9,14 @@ f8082ba2b95cabb6443ed8070974f81a *R/scStability.r
 cec6117abdc10518b640c4c1696576e4 *README.md
 4454e632feb75ce4f508807d50b3b12f *build/partial.rdb
 9bfb850fafc8c3ea66ff3e8cb4d2079f *build/vignette.rds
-2fb397e413e1b570bb5c384987505f0f *inst/WORDLIST
-e61a437c6b1f47d6b9c11b91abc3ff24 *inst/doc/Introduction-to-scStability.R
-0fc8013bc94e71a8e8fae02d93d25be2 *inst/doc/Introduction-to-scStability.Rmd
-6dca1384b00315dab999a7d30eba53bb *inst/doc/Introduction-to-scStability.html
+3842c0dc7cee77a616f2fc61da69e21d *inst/WORDLIST
+7ebcc77a5f9d53def2464c3de6060710 *inst/doc/Introduction-to-scStability.R
+80dd25c81780e7aec7c6af3c3408cea1 *inst/doc/Introduction-to-scStability.Rmd
+454618a043d263bec256ad0ef753e0f0 *inst/doc/Introduction-to-scStability.html
 0acde288770335ccb58953099697d8bd *man/clustStable.Rd
 5c42e7a5bd37d3b92641306afc37175a *man/compareEmb.Rd
 e8ec77bf9945017a52d0c76829c55029 *man/createEmb.Rd
-8a43f3def833223390d60d27b7ea0055 *man/scStability-package.Rd
+cc6eee93e8e7964a16ddf48774c626c5 *man/scStability-package.Rd
 a785404c60dbedf0980b7daa5eed4f81 *man/scStability.Rd
 0622a97a2aaa3c342f09636052c2d7f5 *tests/spelling.R
 1b3b47e9ab326e850e4ff509a91c66e7 *tests/testthat.R
@@ -24,4 +24,4 @@ a785404c60dbedf0980b7daa5eed4f81 *man/scStability.Rd
 7d19da1e025d67e50b7285a984ac5bfb *tests/testthat/test-compareEmb.R
 7be7ec2c6e2083de4e54a4a2491e2ded *tests/testthat/test-createEmb.R
 3aa5e72c31cd84b97af950eb4b8e98ef *tests/testthat/test-scStability.R
-0fc8013bc94e71a8e8fae02d93d25be2 *vignettes/Introduction-to-scStability.Rmd
+80dd25c81780e7aec7c6af3c3408cea1 *vignettes/Introduction-to-scStability.Rmd

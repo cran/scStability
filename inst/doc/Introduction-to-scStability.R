@@ -4,15 +4,22 @@ knitr::opts_chunk$set(
   comment = "#>"
 )
 
-## ----setup--------------------------------------------------------------------
-library(scStability)
+## ----setup, include=FALSE-----------------------------------------------------
+knitr::opts_chunk$set(collapse = TRUE, comment = "#>")
+have_bioc <-
+  requireNamespace("scRNAseq", quietly=TRUE) &&
+  requireNamespace("SummarizedExperiment", quietly=TRUE)
+if (!have_bioc) {
+  message("Skipping entire vignette: please install scRNAseq & SummarizedExperiment from Bioconductor")
+  knitr::opts_chunk$set(eval = FALSE)
+} else {
+  library(scStability)
+  library(scRNAseq)
+  library(SummarizedExperiment)
+}
 
 ## -----------------------------------------------------------------------------
-library(scRNAseq)
-library(SummarizedExperiment)
-
 sce <- scRNAseq::ZeiselBrainData(location = FALSE)
-
 counts_matrix <- SummarizedExperiment::assay(sce, "counts")
 
 ## -----------------------------------------------------------------------------

@@ -14,18 +14,26 @@ knitr::opts_chunk$set(
 )
 ```
 
-```{r setup}
-library(scStability)
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(collapse = TRUE, comment = "#>")
+have_bioc <-
+  requireNamespace("scRNAseq", quietly=TRUE) &&
+  requireNamespace("SummarizedExperiment", quietly=TRUE)
+if (!have_bioc) {
+  message("Skipping entire vignette: please install scRNAseq & SummarizedExperiment from Bioconductor")
+  knitr::opts_chunk$set(eval = FALSE)
+} else {
+  library(scStability)
+  library(scRNAseq)
+  library(SummarizedExperiment)
+}
 ```
 
 
 First, we need to import a scRNA-seq dataset that can be used to demonstrate the functions. We will use the Zeisel brain dataset from the scRNAseq package.
 ```{r}
-library(scRNAseq)
-library(SummarizedExperiment)
-
 sce <- scRNAseq::ZeiselBrainData(location = FALSE)
-
 counts_matrix <- SummarizedExperiment::assay(sce, "counts")
 ```
 
