@@ -28,7 +28,7 @@ scStability(
 
 \item{verbose}{Whether the function should print summary statistics as it calculates them}
 
-\item{print_plot}{Whether the final violin plot should be automatically printed}
+\item{print_plot}{Whether the final medoid plot should be printed}
 
 \item{seeds}{A set of seeds of length n_runs used for generating embeddings and clusters}
 }
@@ -36,7 +36,7 @@ scStability(
 A list containing:
 \item{mean_emb}{Data frame containing the mean embedding coordinates}
 \item{mean_clust}{Vector of the mean cluster assignments}
-\item{plot}{ggplot2 object with the mean embedding plot and cluster assignments}
+\item{plot}{ggplot2 object with the medoid embedding plot and cluster assignments}
 \item{embedding_stats}{List of embedding statistics}
 \item{cluster_stats}{List of clustering statistics}
 \item{seurat_object}{Seurat object now containing mean embeddings and mean clusters}
@@ -44,5 +44,5 @@ A list containing:
 \description{
 A wrapper function that runs all other stability analysis functions in order.
 Statistics for each step are printed accordingly and a final DR and cluster plot is shown
-which represents the mean embeddings and cluster assignments that were generated.
+which represents the medoid embeddings and cluster assignments that were generated.
 }

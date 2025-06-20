@@ -2,7 +2,7 @@
 #'
 #' @description A wrapper function that runs all other stability analysis functions in order.
 #' Statistics for each step are printed accordingly and a final DR and cluster plot is shown
-#' which represents the mean embeddings and cluster assignments that were generated.
+#' which represents the medoid embeddings and cluster assignments that were generated.
 #'
 #' @param seurat_obj A Seurat object containing scRNA-seq data and a PCA
 #' @param n_runs Number of DR embeddings and number of cluster assignments to be generated (< 250 recommended)
@@ -10,7 +10,7 @@
 #' @param clust_method Algorithm used for clustering, either "louvain" or "leiden"
 #' @param n_cores Number of CPU cores to use for parallelising functions
 #' @param verbose Whether the function should print summary statistics as it calculates them
-#' @param print_plot Whether the final violin plot should be automatically printed
+#' @param print_plot Whether the final medoid plot should be printed
 #' @param seeds A set of seeds of length n_runs used for generating embeddings and clusters
 #'
 #' @importFrom magrittr %>%
@@ -19,7 +19,7 @@
 #' @return A list containing:
 #'   \item{mean_emb}{Data frame containing the mean embedding coordinates}
 #'   \item{mean_clust}{Vector of the mean cluster assignments}
-#'   \item{plot}{ggplot2 object with the mean embedding plot and cluster assignments}
+#'   \item{plot}{ggplot2 object with the medoid embedding plot and cluster assignments}
 #'   \item{embedding_stats}{List of embedding statistics}
 #'   \item{cluster_stats}{List of clustering statistics}
 #'   \item{seurat_object}{Seurat object now containing mean embeddings and mean clusters}
@@ -156,9 +156,9 @@ scStability <- function(
 
   seurat_obj$mean_clusters <- as.factor(mean_clust)
 
-  subt <- sprintf("Mean Embedding Correlation: %.4f, Mean Cluster NMI %.4f", embedding_mean, cluster_mean)
+  subt <- sprintf("Medoid Embedding Correlation: %.4f, Medoid Cluster NMI %.4f", embedding_mean, cluster_mean)
   p <- Seurat::DimPlot(seurat_obj, group.by = "mean_clusters") +
-    ggplot2::ggtitle("Mean Embeddings with Mean Clusters", subtitle = subt) +
+    ggplot2::ggtitle("Medoid Embeddings with Medoid Clusters", subtitle = subt) +
     ggplot2::theme_minimal() +
     ggplot2::theme(
       plot.title = ggplot2::element_text(hjust = 0.5),
