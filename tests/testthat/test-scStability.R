@@ -1,6 +1,7 @@
+testthat::skip_if_not_installed("scRNAseq", minimum_version = NULL)
+testthat::skip_if_not_installed("SummarizedExperiment", minimum_version = NULL)
+
 test_that("Check final embeddings and clusters", {
-  skip_if_not_installed("scRNAseq", minimum_version = NULL)
-  skip_if_not_installed("SummarizedExperiment", minimum_version = NULL)
   sce <- scRNAseq::ZeiselBrainData()
   counts_matrix <- SummarizedExperiment::assay(sce, "counts")
   rownames(counts_matrix) <- gsub("_", "-", rownames(counts_matrix))

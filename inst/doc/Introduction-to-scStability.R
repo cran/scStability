@@ -19,8 +19,10 @@ if (!have_bioc) {
 }
 
 ## -----------------------------------------------------------------------------
-sce <- scRNAseq::ZeiselBrainData(location = FALSE)
-counts_matrix <- SummarizedExperiment::assay(sce, "counts")
+if (have_bioc){
+  sce <- scRNAseq::ZeiselBrainData(location = FALSE)
+  counts_matrix <- SummarizedExperiment::assay(sce, "counts")
+}
 
 ## -----------------------------------------------------------------------------
 library(Seurat)

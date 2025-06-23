@@ -1,7 +1,7 @@
-test_that("All embeddings are compared pairwise", {
-  skip_if_not_installed("scRNAseq", minimum_version = NULL)
-  skip_if_not_installed("SummarizedExperiment", minimum_version = NULL)
+testthat::skip_if_not_installed("scRNAseq", minimum_version = NULL)
+testthat::skip_if_not_installed("SummarizedExperiment", minimum_version = NULL)
 
+test_that("All embeddings are compared pairwise", {
   # now the Bioc packages are guaranteed available
   sce <- scRNAseq::ZeiselBrainData()
   counts_matrix <- SummarizedExperiment::assay(sce, "counts")

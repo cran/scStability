@@ -17,6 +17,7 @@ initializations
 joss
 leiden
 louvain
+medoid
 parallelising
 parallelization
 scRNA

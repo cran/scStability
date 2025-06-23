@@ -33,8 +33,10 @@ if (!have_bioc) {
 
 First, we need to import a scRNA-seq dataset that can be used to demonstrate the functions. We will use the Zeisel brain dataset from the scRNAseq package.
 ```{r}
-sce <- scRNAseq::ZeiselBrainData(location = FALSE)
-counts_matrix <- SummarizedExperiment::assay(sce, "counts")
+if (have_bioc){
+  sce <- scRNAseq::ZeiselBrainData(location = FALSE)
+  counts_matrix <- SummarizedExperiment::assay(sce, "counts")
+}
 ```
 
 Then, we need to create a Seurat object to run are functions and create a PCA. To save time, we will reduce our sample to only 200 cells
